@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panquecas da Vila</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🥞 Panquecas da Vila</h1>
+  <p>Quentinhas, saborosas e feitas com carinho, do jeito que você gosta!</p>
+</header>
+
+<section class="hero">
+  <img src="panqueca.jpg" alt="Panqueca da Vila">
+</section>
+
+<section class="cardapio">
+  <h2>Cardápio</h2>
+
+  <div class="item">
+    <h3>Panqueca de Carne</h3>
+    <p>R$ 14,00</p>
+    <input type="number" id="carne" min="0" value="0">
+  </div>
+
+  <div class="item">
+    <h3>Panqueca de Frango</h3>
+    <p>R$ 12,00</p>
+    <input type="number" id="frango" min="0" value="0">
+  </div>
+
+</section>
+
+<section class="cliente">
+  <h2>Seus Dados</h2>
+
+  <input type="text" id="nome" placeholder="Seu nome">
+
+  <input type="text" id="telefone" placeholder="Telefone">
+
+  <input type="text" id="endereco" placeholder="Endereço">
+
+  <input type="text" id="bairro" placeholder="Bairro">
+
+  <input type="text" id="referencia" placeholder="Referência">
+
+  <textarea id="obs" placeholder="Observações do pedido"></textarea>
+
+</section>
+
+<section class="pagamento">
+
+  <h2>Forma de Pagamento</h2>
+
+  <label>
+    <input type="radio" name="pagamento" value="PIX" checked>
+    PIX
+  </label>
+
+  <label>
+    <input type="radio" name="pagamento" value="Dinheiro">
+    Dinheiro
+  </label>
+
+  <label>
+    <input type="radio" name="pagamento" value="Cartão">
+    Cartão (+ R$ 2,00)
+  </label>
+
+</section>
+
+<section class="entrega">
+
+  <h2>Entrega</h2>
+
+  <p>
+    🚚 Frete grátis para:
+    Vila Santo André,
+    Mangueiral e
+    Vila Santa Luzia.
+  </p>
+
+  <p>
+    Demais localidades:
+    frete informado após confirmação do endereço.
+  </p>
+
+</section>
+
+<section class="horario">
+
+  <h2>Horário de Atendimento</h2>
+
+  <p>Segunda, Quarta e Sexta: 09h às 17h</p>
+
+  <p>Terça e Quinta: 09h às 12h30</p>
+
+</section>
+
+<section class="total">
+
+  <h2>Total</h2>
+
+  <h3 id="valorTotal">R$ 0,00</h3>
+
+</section>
+
+<button onclick="enviarPedido()">
+  🚀 Quero Minha Panqueca
+</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>
