@@ -1,117 +1,154 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panquecas da Vila</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panquecas da Vila</title>
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
-  <h1>🥞 Panquecas da Vila</h1>
-  <p>Quentinhas, saborosas e feitas com carinho, do jeito que você gosta!</p>
+
+<img class="banner" src="14A42DA8-620F-4DF6-8AB2-00DAF286CBD8.png" alt="Panquecas da Vila">
+
+<div class="logo-area">
+<h1>🥞 Panquecas da Vila</h1>
+<p>Quentinhas, saborosas e feitas com carinho!</p>
+</div>
+
 </header>
 
-<section class="hero">
-  <img src="panqueca.jpg" alt="Panqueca da Vila">
-</section>
+<section class="menu">
 
-<section class="cardapio">
-  <h2>Cardápio</h2>
+<div class="produto">
 
-  <div class="item">
-    <h3>Panqueca de Carne</h3>
-    <p>R$ 14,00</p>
-    <input type="number" id="carne" min="0" value="0">
-  </div>
+<div>
+<h2>🥞 Carne</h2>
+<p class="destaque">🔥 Mais vendida</p>
+<p>R$ 14,00</p>
+</div>
 
-  <div class="item">
-    <h3>Panqueca de Frango</h3>
-    <p>R$ 12,00</p>
-    <input type="number" id="frango" min="0" value="0">
-  </div>
+<div class="contador">
+<button onclick="alterarQtd('carne',-1)">−</button>
+<span id="qtd-carne">0</span>
+<button onclick="alterarQtd('carne',1)">+</button>
+</div>
 
-</section>
+</div>
 
-<section class="cliente">
-  <h2>Seus Dados</h2>
+<div class="produto">
 
-  <input type="text" id="nome" placeholder="Seu nome">
+<div>
+<h2>🥞 Frango</h2>
+<p>R$ 12,00</p>
+</div>
 
-  <input type="text" id="telefone" placeholder="Telefone">
+<div class="contador">
+<button onclick="alterarQtd('frango',-1)">−</button>
+<span id="qtd-frango">0</span>
+<button onclick="alterarQtd('frango',1)">+</button>
+</div>
 
-  <input type="text" id="endereco" placeholder="Endereço">
-
-  <input type="text" id="bairro" placeholder="Bairro">
-
-  <input type="text" id="referencia" placeholder="Referência">
-
-  <textarea id="obs" placeholder="Observações do pedido"></textarea>
+</div>
 
 </section>
 
-<section class="pagamento">
+<section class="resumo">
 
-  <h2>Forma de Pagamento</h2>
+<h2>📋 Resumo do Pedido</h2>
 
-  <label>
-    <input type="radio" name="pagamento" value="PIX" checked>
-    PIX
-  </label>
-
-  <label>
-    <input type="radio" name="pagamento" value="Dinheiro">
-    Dinheiro
-  </label>
-
-  <label>
-    <input type="radio" name="pagamento" value="Cartão">
-    Cartão (+ R$ 2,00)
-  </label>
+<div id="resumoPedido">
+Nenhum item selecionado
+</div>
 
 </section>
 
-<section class="entrega">
+<section>
 
-  <h2>Entrega</h2>
+<h2>💳 Pagamento</h2>
 
-  <p>
-    🚚 Frete grátis para:
-    Vila Santo André,
-    Mangueiral e
-    Vila Santa Luzia.
-  </p>
+<label>
+<input type="radio" name="pagamento" value="PIX" checked onchange="atualizarTotal()">
+PIX
+</label>
 
-  <p>
-    Demais localidades:
-    frete informado após confirmação do endereço.
-  </p>
+<label>
+<input type="radio" name="pagamento" value="Dinheiro" onchange="atualizarTotal()">
+Dinheiro
+</label>
 
-</section>
-
-<section class="horario">
-
-  <h2>Horário de Atendimento</h2>
-
-  <p>Segunda, Quarta e Sexta: 09h às 17h</p>
-
-  <p>Terça e Quinta: 09h às 12h30</p>
+<label>
+<input type="radio" name="pagamento" value="Cartão" onchange="atualizarTotal()">
+Cartão (+R$2)
+</label>
 
 </section>
 
-<section class="total">
+<section>
 
-  <h2>Total</h2>
+<h2>📍 Dados para Entrega</h2>
 
-  <h3 id="valorTotal">R$ 0,00</h3>
+<input type="text" id="nome" placeholder="Seu nome">
+
+<input type="text" id="telefone" placeholder="Telefone">
+
+<input type="text" id="endereco" placeholder="Endereço">
+
+<input type="text" id="bairro" placeholder="Bairro">
+
+<input type="text" id="referencia" placeholder="Referência">
+
+<textarea id="obs" placeholder="Observações"></textarea>
 
 </section>
+
+<section>
+
+<h2>🚚 Entrega</h2>
+
+<p><strong>Frete grátis:</strong></p>
+
+<ul>
+<li>Vila Santo André</li>
+<li>Mangueiral</li>
+<li>Vila Santa Luzia</li>
+</ul>
+
+<p>Demais localidades: consultar.</p>
+
+</section>
+
+<section>
+
+<h2>📷 Instagram</h2>
+
+<p>@panquecas_davila</p>
+
+<h2>💰 PIX</h2>
+
+<p>(21) 96532-3676</p>
+
+</section>
+
+<div class="rodape-fixo">
+
+<div>
+
+<p>Total</p>
+<h2 id="valorTotal">R$ 0,00</h2>
+
+</div>
 
 <button onclick="enviarPedido()">
-  🚀 Quero Minha Panqueca
+🚀 Quero Minha Panqueca
 </button>
+
+</div>
 
 <script src="script.js"></script>
 
 </body>
+</html>
