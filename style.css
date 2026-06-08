@@ -1,47 +1,144 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f8f8f8;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
 }
 
-header {
-  background: #d62828;
-  color: white;
-  text-align: center;
-  padding: 20px;
+body{
+background:#111;
+color:#fff;
+padding-bottom:120px;
 }
 
-.hero img {
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
+.banner{
+width:100%;
+display:block;
+border-bottom:3px solid #d62828;
 }
 
-section {
-  background: white;
-  margin: 15px;
-  padding: 15px;
-  border-radius: 10px;
+.logo-area{
+text-align:center;
+padding:20px;
+background:#1a1a1a;
 }
 
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 8px;
-  margin-bottom: 12px;
-  box-sizing: border-box;
+.logo-area h1{
+color:#ffd166;
+margin-bottom:10px;
 }
 
-button {
-  width: 90%;
-  margin: 20px auto;
-  display: block;
-  padding: 15px;
-  font-size: 18px;
-  border: none;
-  border-radius: 10px;
-  background: #25D366;
-  color: white;
-  font-weight: bold;
+.logo-area p{
+color:#ddd;
+}
+
+section{
+background:#1d1d1d;
+margin:12px;
+padding:15px;
+border-radius:15px;
+box-shadow:0 0 10px rgba(0,0,0,.3);
+}
+
+section h2{
+margin-bottom:10px;
+color:#ffd166;
+}
+
+.produto{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 0;
+border-bottom:1px solid #333;
+}
+
+.produto:last-child{
+border-bottom:none;
+}
+
+.destaque{
+color:#ffcc00;
+font-weight:bold;
+}
+
+.contador{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.contador button{
+width:40px;
+height:40px;
+border:none;
+border-radius:50%;
+background:#d62828;
+color:white;
+font-size:22px;
+font-weight:bold;
+}
+
+.contador span{
+font-size:20px;
+font-weight:bold;
+min-width:25px;
+text-align:center;
+}
+
+input,
+textarea{
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:12px;
+border:none;
+border-radius:10px;
+font-size:16px;
+}
+
+textarea{
+height:100px;
+resize:none;
+}
+
+label{
+display:block;
+margin-bottom:10px;
+}
+
+ul{
+padding-left:20px;
+}
+
+#resumoPedido{
+line-height:1.8;
+}
+
+.rodape-fixo{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:#000;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-top:2px solid #d62828;
+box-shadow:0 -5px 15px rgba(0,0,0,.5);
+}
+
+.rodape-fixo h2{
+color:#ffd166;
+}
+
+.rodape-fixo button{
+background:#25D366;
+color:white;
+border:none;
+padding:15px;
+border-radius:12px;
+font-size:16px;
+font-weight:bold;
 }
